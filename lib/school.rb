@@ -33,12 +33,7 @@ class School
   end
 
   def convert_end_time_to_clock_time
-    end_int = get_end_time_number
-    if end_int >= 13
-      end_int -= 12
-      end_int.to_s << ":00"
-    else
-      end_time
-    end
+    return (get_end_time_number - 12).to_s << ":00" if get_end_time_number >= 13
+    end_time
   end
 end

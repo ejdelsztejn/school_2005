@@ -13,5 +13,9 @@ class School
     student_names << name
   end
 
-  
+  def end_time
+    start_int = @start_time.delete(":00").to_i
+    end_int = start_int + hours_in_school_day
+    end_int.to_s << ":00"
+  end
 end

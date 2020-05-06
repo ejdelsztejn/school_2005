@@ -74,9 +74,15 @@ class SchoolTest < Minitest::Test
   end
 
   def test_it_can_convert_end_time_to_clock_time
-    school = School.new('9:00', 7)
+    # skip
+    school1 = School.new('9:00', 7)
 
-    assert_equal '16:00', school.end_time
-    assert_equal '4:00', school.convert_end_time_to_clock_time
+    assert_equal '16:00', school1.end_time
+    assert_equal '4:00', school1.convert_end_time_to_clock_time
+
+    school2 = School.new('9:00', 3)
+
+    assert_equal '12:00', school2.end_time
+    assert_equal '12:00', school2.convert_end_time_to_clock_time
   end
 end

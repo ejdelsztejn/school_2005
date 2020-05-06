@@ -28,4 +28,15 @@ class School
       name.capitalize
     end
   end
+
+  def convert_end_time_to_clock_time
+    start_int = @start_time.delete(":00").to_i
+    end_int = start_int + hours_in_school_day
+    if end_int >= 13
+      end_int -= 12
+      end_int.to_s << ":00"
+    else
+      self.end_time
+    end
+  end
 end
